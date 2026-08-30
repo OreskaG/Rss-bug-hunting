@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Задание 3 — Список задач</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="page-header">
+      <a href="../index.html" class="back">← ко всем заданиям</a>
+      <h1>Список задач</h1>
+    </header>
+
+    <main class="app">
+      <div class="add-row">
+        <input type="text" id="task-input" placeholder="Новая задача..." />
+        <button id="add-btn">Добавить</button>
+      </div>
+      <p class="error" id="error" hidden>Введите текст задачи</p>
+
+      <div class="filters">
+        <button data-filter="all" class="filter active">Все</button>
+        <button data-filter="active" class="filter">Активные</button>
+        <button data-filter="done" class="filter">Выполненные</button>
+      </div>
+
+      <ul id="task-list" class="task-list"></ul>
+
+      <div class="footer-row">
+        <span id="counter">Активных задач: 0</span>
+        <button id="clear-completed">Очистить выполненные</button>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

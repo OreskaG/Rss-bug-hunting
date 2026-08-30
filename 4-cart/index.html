@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Задание 4 — Корзина</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="page-header">
+      <a href="../index.html" class="back">← ко всем заданиям</a>
+      <h1>Мини-магазин</h1>
+    </header>
+
+    <main class="shop">
+      <section class="products" id="products"></section>
+
+      <aside class="cart">
+        <h2>Корзина <span id="badge" class="badge">0</span></h2>
+        <ul class="cart-items" id="cart-items"></ul>
+        <p class="empty" id="empty-msg">Корзина пуста</p>
+        <div class="promo">
+          <input type="text" id="promo-input" placeholder="Промокод (SALE10)" />
+          <button id="promo-btn">Применить</button>
+        </div>
+        <p class="total">Итого: <span id="total">0</span> ₽</p>
+        <button id="clear-btn" class="clear">Очистить корзину</button>
+      </aside>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

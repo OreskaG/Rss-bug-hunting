@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Задание 5 — Каталог</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="page-header">
+      <a href="../index.html" class="back">← ко всем заданиям</a>
+      <h1>Каталог товаров</h1>
+    </header>
+
+    <main class="catalog">
+      <div class="controls">
+        <input type="text" id="search" placeholder="Поиск по названию..." />
+        <select id="category">
+          <option value="all">Все категории</option>
+          <option value="phone">Телефоны</option>
+          <option value="laptop">Ноутбуки</option>
+          <option value="audio">Аудио</option>
+        </select>
+        <select id="sort">
+          <option value="default">По умолчанию</option>
+          <option value="asc">Цена ↑</option>
+          <option value="desc">Цена ↓</option>
+        </select>
+        <button id="reset">Сбросить фильтры</button>
+      </div>
+
+      <p class="count">Найдено: <span id="count">0</span></p>
+      <section class="grid" id="grid"></section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
