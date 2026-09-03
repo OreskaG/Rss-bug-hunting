@@ -42,7 +42,9 @@ body {
 .task-card {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
   width: 260px;
   padding: 24px;
   background: #1e293b;
@@ -61,7 +63,7 @@ body {
 }
 
 .task-card__num {
-  font-size: 14px;
+  font-size: 1.5rem;
   color: #64748b;
   font-weight: 700;
 }
