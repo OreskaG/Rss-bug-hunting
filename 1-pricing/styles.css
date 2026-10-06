@@ -54,6 +54,7 @@ body {
 .plan--featured {
   border: 2px solid transparent;
   box-shadow: 0 10px 30px rgba(37, 99, 235, 0.15);
+  border: 2px solid #2563eb;
 }
 
 .plan__name {
