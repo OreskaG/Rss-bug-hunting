@@ -37,7 +37,7 @@ body {
   /* flex-direction: column; */
   justify-content: center;
   align-items: stretch;
-  gap: 0;
+  gap: 6px;
   max-width: 960px;
   margin: 0 auto;
 }
@@ -87,7 +87,7 @@ body {
 }
 
 .features li::before {
-  content: "";
+  content: "✓";
   color: #22c55e;
   font-weight: 700;
   margin-right: 8px;
