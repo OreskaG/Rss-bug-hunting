@@ -37,7 +37,7 @@ body {
   /* flex-direction: column; */
   flex-wrap: wrap;
   justify-content: flex-start;
-  gap: 0;
+  gap: 20px;
   max-width: 1000px;
   margin: 0 auto;
 }
