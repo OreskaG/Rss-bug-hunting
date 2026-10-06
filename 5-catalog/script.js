@@ -17,7 +17,7 @@ const grid = document.getElementById("grid");
 const countEl = document.getElementById("count");
 
 function getFiltered() {
-  let result = products;
+  let result = [...products];
   const search = searchInput.value.toLowerCase();
   const category = categorySelect.value;
   const sort = sortSelect.value;
