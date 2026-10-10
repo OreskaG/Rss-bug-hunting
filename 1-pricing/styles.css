@@ -46,9 +46,12 @@ body {
   background: #ffffff;
   border: 1px solid #e2e8f0;
   border-radius: 0;
-  padding: 0;
+  padding: 32px 24px;
   width: 280px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .plan--featured {
@@ -64,7 +67,7 @@ body {
 .price {
   font-size: 40px;
   font-weight: 700;
-  color: #f8fafc;
+  color: #0f172a;
   margin-bottom: 20px;
 }
 
@@ -78,15 +81,16 @@ body {
   list-style: none;
   margin-bottom: 24px;
   text-align: left;
+  flex-grow: 1;
 }
 
 .features li {
-  padding: 0;
+  padding: 6px 0;
   margin-bottom: 8px;
 }
 
 .features li::before {
-  content: "";
+  content: "✓";
   color: #22c55e;
   font-weight: 700;
   margin-right: 8px;
@@ -96,7 +100,7 @@ body {
   display: inline-block;
   padding: 12px 28px;
   border-radius: 8px;
-  background: #cbd5e1;
+  background: #2563eb;
   color: #ffffff;
   text-decoration: none;
   font-weight: 600;
