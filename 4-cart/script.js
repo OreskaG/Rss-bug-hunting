@@ -20,11 +20,12 @@ const clearBtn = document.getElementById("clear-btn");
 function renderProducts() {
   products.forEach((p) => {
     const card = document.createElement("div");
+    card.id = p.id;
     card.className = "product";
     card.innerHTML = `<h3>${p.name}</h3><p>${p.price} ₽</p>`;
     const btn = document.createElement("button");
     btn.textContent = "В корзину";
-    btn.addEventListener("click", addToCart);
+    btn.addEventListener("click", () => addToCart(p.id));
     card.appendChild(btn);
     productsEl.appendChild(card);
   });
