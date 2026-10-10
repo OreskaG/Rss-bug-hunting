@@ -54,7 +54,7 @@ function decreaseQty(id) {
   const item = cart.find((i) => i.id === id);
   if (item.qty === 1) {
     removeItem(id);
-  }else{
+  } else {
     item.qty--;
   }
   renderCart();
@@ -66,7 +66,8 @@ function removeItem(id) {
 }
 
 function applyPromo() {
-  if ((promoInput.value = "SALE10")) {
+  discount = 0;
+  if (promoInput.value.trim(' ') === "SALE10") {
     discount = 0.1;
   }
   renderCart();
