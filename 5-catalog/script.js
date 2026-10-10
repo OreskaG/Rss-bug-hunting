@@ -27,7 +27,7 @@ function getFiltered() {
   }
 
   if (category !== "all") {
-    result = products.filter((p) => p.category !== category);
+    result = products.filter((p) => p.category === category);
   }
 
   if (sort === "asc") {
@@ -41,6 +41,7 @@ function getFiltered() {
 
 function render() {
   const items = getFiltered();
+  grid.innerHTML = "";
   items.forEach((p) => {
     const card = document.createElement("div");
     card.className = "card";
