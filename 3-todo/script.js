@@ -10,46 +10,61 @@ let tasks = [];
 let currentFilter = "all";
 let nextId = 1;
 
+// Fixed: rejects empty or whitespace-only input and adds valid tasks.
 function addTask() {
-  const text = input.value;
+  const text = input.value.trim();
+  if (!text) {
+    errorEl.hidden = false;
+    return;
+  }
   errorEl.hidden = true;
   tasks.push({ id: nextId++, text: text, done: false });
   input.value = "";
   render();
 }
 
+// Fixed: toggles completion on each click so tasks can be marked or unmarked.
 function toggleTask(id) {
   const task = tasks.find((t) => t.id === id);
-  task.done = true;
+  if (!task) return;
+  task.done = !task.done;
   render();
 }
 
+// Fixed: removes the selected task from the stored list before rendering.
 function deleteTask(id) {
-  tasks.filter((t) => t.id !== id);
+  tasks = tasks.filter((t) => t.id !== id);
   render();
 }
 
+// Fixed: removes completed tasks while keeping active tasks.
 function clearCompleted() {
-  tasks = [];
+  tasks = tasks.filter((t) => !t.done);
   render();
 }
 
+// Fixed: selects tasks according to the All, Active, or Completed filter.
 function getVisibleTasks() {
+  if (currentFilter === "active") return tasks.filter((t) => !t.done);
+  if (currentFilter === "done") return tasks.filter((t) => t.done);
   return tasks;
 }
 
+// Fixed: counts all unfinished tasks, regardless of the selected filter.
 function updateCounter() {
-  counter.textContent = "Активных задач: " + tasks.length;
+  counter.textContent = "Активных задач: " + tasks.filter((t) => !t.done).length;
 }
 
+// Fixed: rebuilds the list without duplicates and visits every visible task.
 function render() {
+  list.replaceChildren();
   const visible = getVisibleTasks();
-  for (let i = 1; i <= visible.length; i++) {
-    const task = visible[i];
+  for (const task of visible) {
     const li = document.createElement("li");
     li.className = "task";
     if (task.done) {
-      li.classList.add("completed");
+      // Use the class expected by CSS to display the completed task style.
+      li.classList.add("done");
     }
 
     const span = document.createElement("span");
@@ -69,7 +84,8 @@ function render() {
   updateCounter();
 }
 
-addBtn.addEventListener("dblclick", addTask);
+// Fixed: adds a task on a single click.
+addBtn.addEventListener("click", addTask);
 clearBtn.addEventListener("click", clearCompleted);
 
 filterButtons.forEach((btn) => {
