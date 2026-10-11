@@ -32,27 +32,35 @@ body {
   text-decoration: none;
 }
 
+/* Fixed: arranges pricing cards in a horizontal row,
+   gives them equal heights, and adds 24px gaps between them. */
 .plans {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: stretch;
-  gap: 0;
+  gap: 24px;
   max-width: 960px;
   margin: 0 auto;
 }
 
+/* Fixed: styles each pricing card with 12px rounded corners,
+   32px vertical padding, and 24px horizontal padding.
+   The flex column allows the button to sit at the bottom of the card. */
 .plan {
+  display: flex;
+  flex-direction: column;
   background: #ffffff;
   border: 1px solid #e2e8f0;
-  border-radius: 0;
-  padding: 0;
+  border-radius: 12px;
+  padding: 32px 24px;
   width: 280px;
   text-align: center;
 }
 
+/* Fixed: highlights the Pro plan with a 2px blue border. */
 .plan--featured {
-  border: 2px solid transparent;
+  border: 2px solid #2563eb;
   box-shadow: 0 10px 30px rgba(37, 99, 235, 0.15);
 }
 
@@ -61,10 +69,12 @@ body {
   margin-bottom: 12px;
 }
 
+/* Fixed: styles the price with a dark color to keep the amount
+   readable against the card's white background. */
 .price {
   font-size: 40px;
   font-weight: 700;
-  color: #f8fafc;
+  color: #0f172a;
   margin-bottom: 20px;
 }
 
@@ -80,23 +90,32 @@ body {
   text-align: left;
 }
 
+/* Fixed: adds 6px of top and bottom padding to each feature
+   to keep the list items visually separated. */
 .features li {
-  padding: 0;
+  padding: 6px 0;
   margin-bottom: 8px;
 }
 
+/* Fixed: adds a green checkmark before each plan feature
+   and a gap between the checkmark and the text. */
 .features li::before {
-  content: "";
+  content: "✓";
   color: #22c55e;
   font-weight: 700;
   margin-right: 8px;
 }
 
+/* Fixed: styles the plan selection button with a blue background
+   and centers it horizontally. The automatic top margin pushes
+   buttons to the bottom of their cards, aligning them at the same height. */
 .btn {
   display: inline-block;
+  align-self: center;
+  margin-top: auto;
   padding: 12px 28px;
   border-radius: 8px;
-  background: #cbd5e1;
+  background: #2563eb;
   color: #ffffff;
   text-decoration: none;
   font-weight: 600;
