@@ -5,7 +5,12 @@
 }
 
 body {
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
   background: #f1f5f9;
   color: #0f172a;
   padding: 40px 20px;
@@ -34,10 +39,10 @@ body {
 
 .plans {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: stretch;
-  gap: 0;
+  gap: 24px;
   max-width: 960px;
   margin: 0 auto;
 }
@@ -45,14 +50,17 @@ body {
 .plan {
   background: #ffffff;
   border: 1px solid #e2e8f0;
-  border-radius: 0;
-  padding: 0;
+  border-radius: 12px;
+  padding: 32px 24px;
   width: 280px;
   text-align: center;
+
+  display: flex;
+  flex-direction: column;
 }
 
 .plan--featured {
-  border: 2px solid transparent;
+  border: 2px solid #2563eb;
   box-shadow: 0 10px 30px rgba(37, 99, 235, 0.15);
 }
 
@@ -64,10 +72,9 @@ body {
 .price {
   font-size: 40px;
   font-weight: 700;
-  color: #f8fafc;
+  color: #0f172a;
   margin-bottom: 20px;
 }
-
 .price span {
   font-size: 16px;
   font-weight: 400;
@@ -81,12 +88,12 @@ body {
 }
 
 .features li {
-  padding: 0;
-  margin-bottom: 8px;
+  padding: 6px 0;
+  margin-bottom: 0;
 }
 
 .features li::before {
-  content: "";
+  content: "✓";
   color: #22c55e;
   font-weight: 700;
   margin-right: 8px;
@@ -96,8 +103,12 @@ body {
   display: inline-block;
   padding: 12px 28px;
   border-radius: 8px;
-  background: #cbd5e1;
+  background: #2563eb;
   color: #ffffff;
   text-decoration: none;
   font-weight: 600;
+}
+.plan .btn {
+  margin-top: auto;
+  align-self: center;
 }
